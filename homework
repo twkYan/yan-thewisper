@@ -1,0 +1,66 @@
+erDiagram
+Generos}|..|{ Musica:"possuem"
+Musica}|..|{ Artistas: "são produzidas por"
+Musica}|..|{ Playlists: "estao em"
+Artistas}|..|{ Album: "possuem"
+Album}|..|{Musica: "possuem"
+Album}|..|{produtora: "possuem"
+Artistas}|..|{produtora: "possuem"
+produtora}|..|{Musica: "possuem"
+Artistas}|..|{Bandas: "tem"
+Bandas}|..|{produtora: "possuem"
+Bandas}|..|{Album: "possuem"
+Generos {
+    int id_genero
+    string name_genero
+    int id_music
+}
+Musica{
+    int id_music
+    string name_music
+    int id_artist
+    int id_band
+    int id_produtora
+    int id_genero
+    int id_playlist
+}
+    Artistas{
+        int id_artist
+        string name_artista
+        
+        int id_produtora
+        string id_album
+        int  id_band
+    }Playlists{
+        int id_playlist
+        string name_playlist
+        int id_music
+    }
+    Bandas{
+        int id_band
+        string name_band
+        string integrantes
+        string instrumentos
+        int id_music
+        int id_produtora
+        int id_album
+
+    }
+    Album{
+        int  id_album
+        string name_album
+        int id_artist
+        int id_band
+        int id_produtora
+        int id_music
+
+        }
+        produtora{
+            int id_produtora
+            string name_produtora
+            int id_music
+            int id_artist
+            int id_album
+            int id_band
+
+        }
